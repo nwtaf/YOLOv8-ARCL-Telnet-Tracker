@@ -1,0 +1,6 @@
+moviepy>=1.0.3
+numpy>=1.26.2
+opencv_python>=4.8.1.78
+pytube>=15.0.0
+ultralytics>=8.0.223
+simple_pid>=2.0.0
