@@ -88,19 +88,19 @@ The main tkinter GUI application. Other modules support the GUI. Users select a 
 Provides data for PID controllers, and functions to track objects and annotate frames. Loads fisheye calibration parameters if enabled.
 
 ### PID Module:
-Separate [PID controllers](https://github.com/nwtaf/ASC/blob/main/reference/pid.md) are used to control the x and y axis independently. Their parameters are exposed for tuning here. Contains the control logic, and issues commands using functions provided by telnet client.
+Separate PID controllers are used to control the x and y axis independently. Their parameters are exposed for tuning here. Contains the control logic, and issues commands using functions provided by telnet client.
 
 ### Telnet Client:
 Telnet client module provides functions to automatically connect, send, and receive data from the robot (telnet server). This could be substituted with a different API, such as that of a different communication protocol.
 
 ## Calibration
-This section is borrowed with attribution. It is supported by a utility script [yolocam.py](https://github.com/nwtaf/ASC/blob/main/src/utilities/yolocam.py) that takes photos and saves them in the same path that `camera_calibrate.py` loads them them. `Camera_calibrate.py` will automatically save the camera calibration parameters, where `ASC_frontent_module` expects them.
+This section is borrowed with attribution. It is supported by a utility script utilities/yolocam.py that takes photos with keyboard spacebar and saves them in the same path that `camera_calibrate.py` loads them them. `Camera_calibrate.py` will automatically save the camera calibration parameters, where `ASC_frontent_module` expects them.
 
 ## Telnet
 This section contains code that enables communication with a telnet server.
 
 ### Telnet Client
-The original `telnet_client` code, before a newer version was made in `frontend/telnet_client`.
+The original `telnet_client` code, before a newer version was made in `frontend/telnet_client`. Notice one was implemented as an object.
 
 ### Telnet Command Dictionary
 ARCL commands supported on a particular robot. Imported in UI.py as `commands_dict`.
@@ -118,7 +118,7 @@ Displays what the camera sees.
 Displays what the camera sees, includes time stamps for portions of camera setup.
 
 ### Setup.sh
-This was an attempt at an automated setup script for raspberry pi device. This script is still immensely useful if manually entered line-by-line instead of being run as a .sh. 
+This was an attempt at an automated setup script for raspberry pi device. This script is still immensely useful if manually entered line-by-line instead of being run as a .sh. It is broken and should not be run as .sh. 
 
 ### YoloCam
 Contains a software defined camera that saves calibration checkerboard images to `src\calibration\Chessboards` and incrementally names them as `snapshot_#.png`.  
@@ -130,7 +130,7 @@ This is a helpful script for downloading source material for testing. It will ne
 ## Raspberry Pi Setup:
 ### Simple headless VNC Viewer setup:
 1. Use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to include the lastest OS for your device and preconfigure the VNC interface and ip connection with the network name and password. 
-- https://www.tomshardware.com/reviews/raspberry-pi-headless-setup-how-to,6028.html
+2. [TomsHardware](https://www.tomshardware.com/reviews/raspberry-pi-headless-setup-how-to,6028.html) headless-setup instructions.
 
 ### Complicated headless SSH setup:
 - https://www.raspberrypi.com/documentation/computers/configuration.html#setting-up-a-headless-raspberry-pi
@@ -139,5 +139,7 @@ This is a helpful script for downloading source material for testing. It will ne
 ## Installation
 At attempt was made to automate installation and setup for raspberry pi, which can be referred to at [setup.sh](https://github.com/nwtaf/ASC/blob/main/src/utilities/setup.sh)
 For more information on installation and configuration for all machines, refer to: https://github.com/nwtaf/object-tracking-demo.
+
+`pip install -r requirements.txt`
 
 
