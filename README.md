@@ -3,6 +3,8 @@
 
 This project offers a user-friendly autonomous tracking system using [ultralytics YOLOv8 tracking](https://docs.ultralytics.com/modes/track/#tracking) and example implementation with a robot controlled with ARCL commands via telnet communication. There is a [frontend application](https://github.com/nwtaf/ASC/blob/main/src/frontend/tkinter_experiment.py) that is intended for an user to initiate tracking. There is also a [backend application](https://github.com/nwtaf/ASC/blob/main/src/telnet/UI.py) that allows a user to send and receive ARCL commands directly, and arrow key bindings for manual robot control. Support for fisheye distortion calibration is also included. 
 
+It was developed as a team with contributions from [@rajvip07](https://github.com/rajvip07), [@harleengill7](https://github.com/harleengill7), [@ASlei717](https://github.com/ASlei717), and [@nwtaf](https://github.com/nwtaf).
+
 Note: This repo contains improper usage of threading, which left performance on the table. Threading implementation should be converted to subproceessing or similar to make use of multi-core CPUs. 
 
 Further: ARCL commands can be relatively slow, and may critically limit control possibilities if only one command can be executed at a time (e.g. forward xor turn). Consider control options that can utilize multiple instructions at once, like a physical controller with low-level protocols. 
